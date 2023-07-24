@@ -23,13 +23,13 @@ const makeGraphQLRequest = async (query: string, variables = {}) => {
 // Hàm gọi truy vấn trả về người dùng
 export const getUser = (email: string) => {
     // Việc gán api key vào header request như là 1 cách ủy quyền cho request đó lên sv
-    client.setHeader('x-api-key', apiKey);
+    client.setHeader('x-api-key', apiKey)
     return makeGraphQLRequest(getUserQuery, {email})
 }
 
 // Hàm điều chỉnh tạo người dùng mới
 export const createUser = (name:string ,email: string, avatarUrl: string) => {
-    client.setHeader('x-api-key', apiKey);
+    client.setHeader('x-api-key', apiKey)
     const variables = {
         input: {
             name,
